@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { HeaderLogado } from "../../Components/HeaderLogado/HeaderLogado";
-import { Navlateral } from "../../Components/NavLateral/NavLateral";
+import { NavLateral } from "../../Components/NavLateral/NavLateral";
 import voltar from "../../assets/Icons/VoltarMusica.svg";
 import avancar from "../../assets/Icons/avancarMusica.svg";
 import pausar from "../../assets/Icons/pausar.svg";
@@ -73,7 +73,7 @@ export function DetalheMusica() {
   return (
     <Tudo>
       <HeaderLogado />
-      <Navlateral />
+      <NavLateral />
       {loading ? (
         <LoadingContainer>
           <ImagemCarregando src={gifSpot} alt="Carregando" />

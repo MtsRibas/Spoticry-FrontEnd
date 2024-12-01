@@ -6,6 +6,7 @@ import { PlaylistUser } from "../PlaylistsUser/PlaylistUser";
 import { MusicUser } from "../MusicUser/MusicUser";
 import { DetalhePlaylist } from "../PlaylistsUser/DetalhePlaylist";
 import { DetalheMusica } from "../MusicUser/DetalheMusica";
+import { Error } from "../../pages/Error/Error";
 
 const Router = () => (
   <Routes>
@@ -15,6 +16,7 @@ const Router = () => (
     <Route path="/musics" element={<MusicUser />} />
     <Route path="/playlist/:playlistId" component={DetalhePlaylist} />
     <Route path="/musica/:id" element={<DetalheMusica />} />
+    <Route path="*" element={<Error />} />
   </Routes>
 );
 

@@ -10,6 +10,7 @@ import { DetalhePlaylist } from "./pages/PlaylistsUser/DetalhePlaylist";
 import { DetalheMusica } from "./pages/MusicUser/DetalheMusica";
 import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
 import { Colors } from "./Constants/Colors";
+import { Error } from "./pages/Error/Error";
 
 const Page = styled.div`
   padding: 10px 210px;
@@ -70,7 +71,8 @@ function App() {
               />
             }
           />
-          <Route path="*" element={<LandingPage />} />
+
+          <Route path="*" element={<Error />} />
         </Routes>
       </Page>
     </BrowserRouter>
