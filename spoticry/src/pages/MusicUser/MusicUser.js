@@ -3,7 +3,7 @@ import { HeaderLogado } from "../../Components/HeaderLogado/HeaderLogado";
 import adicionar from "../../assets/Icons/adicionar.svg";
 import foguinho from "../../assets/Icons/fireIcon.svg";
 import MusicPlayer from "../../Components/MusicPlayer/MusicPlayer";
-import { NavTeste } from "../../Components/NavTeste/NavTeste";
+import { NavLateral } from "../../Components/NavLateral/NavLateral";
 import editar from "../../assets/Icons/editar.svg";
 import gifCarregando from "../../assets/spot.gif";
 import { ToastContainer, toast } from "react-toastify";
@@ -219,7 +219,7 @@ export function MusicUser() {
 
   return (
     <Tudo>
-      <NavTeste />
+      <NavLateral />
       <ConteudoPrincipal>
         <HeaderLogado onSearch={handleSearch} />
         {loading ? (
@@ -235,7 +235,10 @@ export function MusicUser() {
                 </span>
                 Minhas Músicas
               </h1>
-              <BotaoAdicionar onClick={() => setModalMusicOpen(true)}>
+              <BotaoAdicionar
+                onClick={() => setModalMusicOpen(true)}
+                aria-label="Adicionar nova música"
+              >
                 <img src={adicionar} alt="Adicionar Música" />
               </BotaoAdicionar>
             </Titulo>
@@ -253,6 +256,7 @@ export function MusicUser() {
                 <SelectFiltro
                   value={order}
                   onChange={(e) => setOrder(e.target.value)}
+                  aria-label="Ordenar músicas"
                 >
                   <option value="asc">Nome Música A-Z</option>
                   <option value="desc">Nome Música Z-A</option>
@@ -268,6 +272,7 @@ export function MusicUser() {
                     <ListItens key={musica.id}>
                       <TituloMusicas
                         onClick={() => navigate(`/musica/${musica.id}`)}
+                        aria-label=" Ir para Detalhes da música"
                       >
                         <h4>{musica.title}</h4>
                         <p>Artista: {musica.artist}</p>
@@ -275,16 +280,21 @@ export function MusicUser() {
                       <Botoes>
                         <BotaoReproduzir
                           onClick={() => setCurrentUrl(musica.url)}
+                          aria-label="Reproduzir música"
                         >
                           Reproduzir
                         </BotaoReproduzir>
                         {musica.userId === parseJwt(token)?.id && (
                           <>
-                            <BotaoEditar onClick={() => openEditModal(musica)}>
+                            <BotaoEditar
+                              onClick={() => openEditModal(musica)}
+                              aria-label="Editar música"
+                            >
                               <img src={editar} alt="Ícone editar" />
                             </BotaoEditar>
                             <BotaoDeletar
                               onClick={() => deletarMusica(musica.id)}
+                              aria-label="deletar música"
                             >
                               X
                             </BotaoDeletar>

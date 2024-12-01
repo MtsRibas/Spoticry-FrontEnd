@@ -7,7 +7,9 @@ export function Modal({ aberto, fechado, conteudoModal }) {
   return (
     <Aberto>
       <Conteudo>
-        <BotaoFechar onClick={fechado}>X</BotaoFechar>
+        <BotaoFechar aria-label="Fechar Modal" onClick={fechado}>
+          X
+        </BotaoFechar>
         {conteudoModal}
       </Conteudo>
     </Aberto>

@@ -52,7 +52,10 @@ const MusicPlayer = ({ url, playing, setPlaying }) => {
       </div>
 
       <ControleContainer>
-        <BotaoControle onClick={skipBackward}>
+        <BotaoControle
+          onClick={skipBackward}
+          aria-label="Voltar 10 segundos da música"
+        >
           <img src={voltar} alt="icone voltar" />
         </BotaoControle>
         <BotaoControle onClick={() => setPlaying(!playing)}>
@@ -62,7 +65,10 @@ const MusicPlayer = ({ url, playing, setPlaying }) => {
             <img src={play} alt="icone iniciar musica" />
           )}
         </BotaoControle>
-        <BotaoControle onClick={skipForward}>
+        <BotaoControle
+          onClick={skipForward}
+          aria-label="Avançar 10 segundos da música"
+        >
           <img src={avancar} alt="icone avancar" />
         </BotaoControle>
       </ControleContainer>

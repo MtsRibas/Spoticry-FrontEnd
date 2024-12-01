@@ -41,7 +41,9 @@ export function LandingPage() {
       <Banner>
         <Header>
           <img src={logo} alt="logo" />
-          <BotaoLogin onClick={goLogin}>Entrar na conta</BotaoLogin>
+          <BotaoLogin onClick={goLogin} aria-label="Entrar na conta">
+            Entrar na conta
+          </BotaoLogin>
         </Header>
       </Banner>
       <GeneroBanner>
@@ -113,7 +115,9 @@ export function LandingPage() {
       <SessionStart>
         <p>Inicie sua sessão e faça parte</p>
 
-        <Botao onClick={goLogin}>COMECE A ESCUTAR</Botao>
+        <Botao onClick={goLogin} aria-label="Começar a ouvir">
+          COMECE A ESCUTAR
+        </Botao>
       </SessionStart>
       <Footer>
         <img src={logo} alt="logo" />

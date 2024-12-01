@@ -9,7 +9,7 @@ import adicionar from "../../assets/Icons/adicionar.svg";
 import detalheModal from "../../assets/Icons/btnIcon.svg";
 import { useNavigate } from "react-router-dom";
 import editar from "../../assets/Icons/editar.svg";
-import { NavTeste } from "../../Components/NavTeste/NavTeste";
+import { NavLateral } from "../../Components/NavLateral/NavLateral";
 import imagemCarregando from "../../assets/spot.gif";
 import { toast, ToastContainer } from "react-toastify";
 import playVazia from "../../assets/aviso.png";
@@ -222,7 +222,7 @@ export function PlaylistUser() {
 
   return (
     <Tudo>
-      <NavTeste />
+      <NavLateral />
       <HeaderLogado />
 
       <Titulo>
@@ -232,7 +232,10 @@ export function PlaylistUser() {
           </span>
           Playlists
         </h1>
-        <BotaoAdicionar onClick={onClickOpenModal}>
+        <BotaoAdicionar
+          onClick={onClickOpenModal}
+          aria-label="Adicionar nova playlist"
+        >
           <img src={adicionar} alt="botao de adicionar" />
         </BotaoAdicionar>
       </Titulo>
@@ -244,10 +247,16 @@ export function PlaylistUser() {
         <>
           <FiltroContainer>
             <div>
-              <FiltroButton onClick={() => setShowUserPlaylists(false)}>
+              <FiltroButton
+                onClick={() => setShowUserPlaylists(false)}
+                aria-label="Exibir todas as playlists"
+              >
                 Todas as Playlists
               </FiltroButton>
-              <FiltroButton onClick={() => setShowUserPlaylists(true)}>
+              <FiltroButton
+                onClick={() => setShowUserPlaylists(true)}
+                aria-label="Exibir minhas playlists"
+              >
                 Minhas Playlists
               </FiltroButton>
             </div>
@@ -257,10 +266,12 @@ export function PlaylistUser() {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Buscar playlists..."
+                aria-label="Buscar por nome de playlist"
               />
               <SelectFiltro
                 value={sortCriteria}
                 onChange={(e) => setSortCriteria(e.target.value)}
+                aria-label="Ordenar playlists"
               >
                 <option value="">Ordenar por</option>
                 <option value="name-asc">Nome A-Z</option>
@@ -274,6 +285,7 @@ export function PlaylistUser() {
               <PaginationButton
                 onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
                 disabled={currentPage === 1}
+                aria-label="Página anterior"
               >
                 Anterior
               </PaginationButton>
@@ -285,6 +297,7 @@ export function PlaylistUser() {
                   setCurrentPage((prev) => Math.min(prev + 1, totalPages))
                 }
                 disabled={currentPage === totalPages}
+                aria-label="Próxima página"
               >
                 Próxima
               </PaginationButton>
@@ -295,6 +308,7 @@ export function PlaylistUser() {
                   <ListItens key={playlist._id}>
                     <InfoTotal
                       onClick={() => handlePlaylistClick(playlist._id)}
+                      aria-label="Abrir playlist"
                     >
                       <DivImagem>
                         <ImagemPlaylist
@@ -315,11 +329,13 @@ export function PlaylistUser() {
                         <>
                           <BotaoEditar
                             onClick={() => abrirModalEdicao(playlist)}
+                            aria-label="Editar playlist"
                           >
                             <img src={editar} alt="Icone editar" />
                           </BotaoEditar>
                           <BotaoDeletar
                             onClick={() => deletarPlaylist(playlist._id)}
+                            aria-label="Deletar playlist"
                           >
                             X
                           </BotaoDeletar>
@@ -367,7 +383,11 @@ export function PlaylistUser() {
                 placeholder="Descricao Playlist"
                 aria-label="Descricao Playlist"
               />
-              <BotaoEnviar type="button" onClick={onClickCreatePlaylist}>
+              <BotaoEnviar
+                type="button"
+                onClick={onClickCreatePlaylist}
+                aria-label="Salvar playlist"
+              >
                 Salvar Playlist
               </BotaoEnviar>
             </Form>

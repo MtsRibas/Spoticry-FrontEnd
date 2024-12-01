@@ -1,7 +1,6 @@
 import React from "react";
 import fotoUsuario from "../../assets/perfil.jpg";
 import casa from "../../assets/Icons/casa.svg";
-
 import musica from "../../assets/Icons/musica2.svg";
 import { useNavigate } from "react-router-dom";
 import { goToHomePage, goToMusics } from "../Rotas/Cordinator";
@@ -12,18 +11,20 @@ import {
   FotoUser,
   Usuario,
   Detail,
-  Teste,
+  Navegacao,
   MenuItem,
   Footer,
   Detail2,
-} from "../Style/StyledNavTeste";
+} from "../Style/StyledNavLateral";
 
-export function NavTeste() {
+export function NavLateral() {
   const user = localStorage.getItem("email");
   const navigate = useNavigate();
+
   const goMusics = () => {
     goToMusics(navigate);
   };
+
   const goHome = () => {
     goToHomePage(navigate);
   };
@@ -31,23 +32,30 @@ export function NavTeste() {
   return (
     <BarraLateral>
       <UserInfo>
-        <FotoUser src={fotoUsuario} alt="Foto perfil" />
+        <FotoUser src={fotoUsuario} alt="Foto de perfil do usuário" />
         <Usuario>{user}</Usuario>
         <Detail />
       </UserInfo>
-      <Teste>
-        <img src={casa} alt="Icone casa" />
+      <Navegacao>
+        <img
+          src={casa}
+          alt="Ícone de casa"
+          aria-label="Ir para a página inicial"
+        />
         <MenuItem onClick={goHome}>Home</MenuItem>
-      </Teste>
-      <Teste>
-        <img src={musica} alt="Icone musica" />
+      </Navegacao>
+      <Navegacao>
+        <img
+          src={musica}
+          alt="Ícone de músicas"
+          aria-label="Ir para minhas músicas"
+        />
         <MenuItem onClick={goMusics}>Minhas Músicas</MenuItem>
-      </Teste>
+      </Navegacao>
       <Footer>
         <div>
-          <img src={logo} alt="icone log" />
+          <img src={logo} alt="Logo do aplicativo" />
         </div>
-
         <Detail2 />
         <p>DESENVOLVIDO POR “JUNIN E SEUS PARCEIROS”</p>
       </Footer>

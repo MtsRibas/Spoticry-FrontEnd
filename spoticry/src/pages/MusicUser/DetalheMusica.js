@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { HeaderLogado } from "../../Components/HeaderLogado/HeaderLogado";
-import { NavTeste } from "../../Components/NavTeste/NavTeste";
+import { Navlateral } from "../../Components/NavLateral/NavLateral";
 import voltar from "../../assets/Icons/VoltarMusica.svg";
 import avancar from "../../assets/Icons/avancarMusica.svg";
 import pausar from "../../assets/Icons/pausar.svg";
@@ -73,7 +73,7 @@ export function DetalheMusica() {
   return (
     <Tudo>
       <HeaderLogado />
-      <NavTeste />
+      <Navlateral />
       {loading ? (
         <LoadingContainer>
           <ImagemCarregando src={gifSpot} alt="Carregando" />
@@ -103,7 +103,10 @@ export function DetalheMusica() {
             </NomeArtista>
           </DescricaoMusica>
           <ControleContainer>
-            <BotaoControle onClick={skipBackward}>
+            <BotaoControle
+              onClick={skipBackward}
+              aria-label="Voltar 10 segundos"
+            >
               <img src={voltar} alt="Voltar" />
             </BotaoControle>
             <BotaoControle onClick={() => setPlaying(!playing)}>
@@ -113,7 +116,10 @@ export function DetalheMusica() {
                 <img src={play} alt="Play" />
               )}
             </BotaoControle>
-            <BotaoControle onClick={skipForward}>
+            <BotaoControle
+              onClick={skipForward}
+              aria-label="Avançar 10 segundos"
+            >
               <img src={avancar} alt="Avançar" />
             </BotaoControle>
           </ControleContainer>

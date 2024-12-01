@@ -63,7 +63,7 @@ export function Login({ Logando }) {
   return (
     <div>
       <Logo>
-        <a href="/">
+        <a href="/" aria-label="Voltar para a Landing Page">
           <img src={logo} alt="Logo" />
         </a>
       </Logo>
@@ -76,7 +76,7 @@ export function Login({ Logando }) {
           <>
             <DivTitulo>
               <DivVoltar>
-                <a href="/">
+                <a href="/" aria-label="Voltar para a Landing Page">
                   <img src={voltar} alt="Seta voltar" />
                 </a>
               </DivVoltar>
@@ -97,7 +97,11 @@ export function Login({ Logando }) {
                 placeholder="Senha"
                 required
               />
-              <Botao type="submit" disabled={carregando}>
+              <Botao
+                type="submit"
+                disabled={carregando}
+                aria-label="Entrar na conta"
+              >
                 Entrar
                 <img src={seta} alt="setinha" />
               </Botao>

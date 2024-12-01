@@ -57,7 +57,7 @@ export const Detail2 = styled.span`
   height: 2px;
   align-items: center;
 `;
-export const Teste = styled.div`
+export const Navegacao = styled.div`
   display: flex;
   width: 100%;
   text-align: left;

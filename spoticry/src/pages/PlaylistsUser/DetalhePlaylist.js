@@ -10,7 +10,7 @@ import {
 } from "../../Components/Requisicoes/Reqs";
 import adicionarMusica from "../../assets/Icons/adicionar.svg";
 import { HeaderLogado } from "../../Components/HeaderLogado/HeaderLogado";
-import { NavTeste } from "../../Components/NavTeste/NavTeste";
+import { NavLateral } from "../../Components/NavLateral/NavLateral";
 import ModalMusicPlaylist from "../../Components/Modais/ModalMusicPlaylist";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -131,7 +131,7 @@ export function DetalhePlaylist() {
 
   return (
     <Tudo>
-      <NavTeste />
+      <NavLateral />
       <HeaderLogado />
       <Content>
         {loading ? (
@@ -142,14 +142,21 @@ export function DetalhePlaylist() {
           <>
             <DivTitulo>
               <Titulo>{playlist?._name}</Titulo>
-              <BotaoAdicionar onClick={() => setModalOpen(true)}>
+              <BotaoAdicionar
+                onClick={() => setModalOpen(true)}
+                aria-label="Adicionar música à playlist"
+              >
                 <img src={adicionarMusica} alt="Adicionar Música" />
               </BotaoAdicionar>
             </DivTitulo>
 
             <h2>Músicas</h2>
             <Paginacao>
-              <BotaoPaginacao onClick={prevPage} disabled={currentPage === 1}>
+              <BotaoPaginacao
+                onClick={prevPage}
+                disabled={currentPage === 1}
+                aria-label="Página anterior"
+              >
                 Anterior
               </BotaoPaginacao>
               <span>
@@ -158,6 +165,7 @@ export function DetalhePlaylist() {
               <BotaoPaginacao
                 onClick={nextPage}
                 disabled={currentPage === totalPages}
+                aria-label="Próxima página"
               >
                 Próximo
               </BotaoPaginacao>
@@ -166,7 +174,10 @@ export function DetalhePlaylist() {
               <Lista>
                 {paginatedSongs().map((songId) => (
                   <ListItens key={songId}>
-                    <DivDadosMusica onClick={() => handleMusicClick(songId)}>
+                    <DivDadosMusica
+                      onClick={() => handleMusicClick(songId)}
+                      aria-label="Ver detalhes da música"
+                    >
                       <strong>Música:</strong>{" "}
                       {songDetails[songId]?.title || "Carregando..."}
                       <br />
@@ -175,6 +186,7 @@ export function DetalhePlaylist() {
                     </DivDadosMusica>
                     <BotaoExcluir
                       onClick={() => handleRemoveSongFromPlaylist(songId)}
+                      aria-label="Excluir música"
                     >
                       X
                     </BotaoExcluir>

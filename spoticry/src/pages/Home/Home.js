@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { HeaderLogado } from "../../Components/HeaderLogado/HeaderLogado";
 import axios from "axios";
 import foguinho from "../../assets/Icons/fireIcon.svg";
-import { NavTeste } from "../../Components/NavTeste/NavTeste";
+import { NavLateral } from "../../Components/NavLateral/NavLateral";
 import { useNavigate } from "react-router-dom";
 import fotoBanner from "../../assets/ritmada-do-zelda-saturada.png";
 import {
@@ -111,7 +111,7 @@ export function Home() {
   return (
     <div>
       <HeaderLogado />
-      <NavTeste playlist={playlistsEmAlta.concat(playlistsUltimasMusicas)} />
+      <NavLateral playlist={playlistsEmAlta.concat(playlistsUltimasMusicas)} />
       <h1>
         <span>
           <img src={foguinho} alt="fogo" />
@@ -129,6 +129,7 @@ export function Home() {
               href={reproduzirMusica}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Reproduzir música popular"
             >
               Play
             </Botao>
@@ -146,6 +147,7 @@ export function Home() {
             <Botao1
               onClick={pageAnteriorEmAlta}
               disabled={paginaAtualEmAlta === 1}
+              aria-label="Página anterior de playlists em alta"
             >
               ←
             </Botao1>
@@ -155,6 +157,7 @@ export function Home() {
             <Botao1
               onClick={proxPagEmAlta}
               disabled={paginaAtualEmAlta >= totalPaginasEmAlta}
+              aria-label="Próxima página de playlists em alta"
             >
               →
             </Botao1>
@@ -171,6 +174,7 @@ export function Home() {
               <CardPlaylist
                 key={playlist._id}
                 onClick={() => goDetalhePlaylist(playlist._id)}
+                aria-label="Ir para detalhe das Playlists"
               >
                 <Fotinha>
                   <Imagem
@@ -195,6 +199,7 @@ export function Home() {
             <Botao1
               onClick={pageAnteriorUltimasMusicas}
               disabled={paginaAtualUltimasMusicas === 1}
+              aria-label="Página anterior de últimas músicas"
             >
               ←
             </Botao1>
@@ -204,6 +209,7 @@ export function Home() {
             <Botao1
               onClick={proxPagUltimasMusicas}
               disabled={paginaAtualUltimasMusicas >= totalPaginasUltimasMusicas}
+              aria-label="Próxima página de últimas músicas"
             >
               →
             </Botao1>
@@ -223,6 +229,7 @@ export function Home() {
               <CardPlaylist
                 key={playlist._id}
                 onClick={() => goDetalhePlaylist(playlist._id)}
+                aria-label="Ir para detalhe das Playlists"
               >
                 <Fotinha>
                   <Imagem

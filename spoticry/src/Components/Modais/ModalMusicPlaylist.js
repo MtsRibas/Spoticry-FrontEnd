@@ -34,7 +34,9 @@ const ModalMusicPlaylist = ({
       <ModalMusic>
         <DivFecharModal>
           <h3>Selecione uma música para adicionar</h3>
-          <BotaoFechar onClick={closeModal}>X</BotaoFechar>
+          <BotaoFechar onClick={closeModal} aria-label="Fechar Modal">
+            X
+          </BotaoFechar>
         </DivFecharModal>
 
         {allSongs && allSongs.length > 0 ? (
@@ -57,6 +59,7 @@ const ModalMusicPlaylist = ({
                   setModalCurrentPage((prev) => Math.max(prev - 1, 1))
                 }
                 disabled={modalCurrentPage === 1}
+                aria-label="Página anterior"
               >
                 Anterior
               </PaginationButton>
@@ -68,6 +71,7 @@ const ModalMusicPlaylist = ({
                   setModalCurrentPage((prev) => Math.min(prev + 1, totalPages))
                 }
                 disabled={modalCurrentPage === totalPages}
+                aria-label="Próxima página"
               >
                 Próxima
               </PaginationButton>

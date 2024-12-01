@@ -41,7 +41,7 @@ export function EditModal({ playlist, onClose, onUpdate }) {
       fechado={onClose}
       conteudoModal={
         <>
-          <h2>Editar Playlist</h2>
+          <h2 aria-label="Titulo Modal">Editar Playlist</h2>
           <Form onSubmit={(e) => e.preventDefault()}>
             <label>Editar Nome</label>
             <Input
@@ -57,7 +57,11 @@ export function EditModal({ playlist, onClose, onUpdate }) {
               onChange={(e) => setNovaDescricao(e.target.value)}
               placeholder="Nova descricao"
             />
-            <BotaoEnviar type="button" onClick={handleUpdate}>
+            <BotaoEnviar
+              type="button"
+              onClick={handleUpdate}
+              aria-label="Salvar Alterações"
+            >
               Salvar Alterações
             </BotaoEnviar>
           </Form>

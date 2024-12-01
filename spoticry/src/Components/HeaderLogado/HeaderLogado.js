@@ -34,20 +34,42 @@ export function HeaderLogado() {
     <div>
       <Menu>
         <Juncao>
-          <img src={Logo} alt="logo" />
+          <img
+            src={Logo}
+            alt="logo"
+            onClick={goHome}
+            aria-label="Ir para a página inicial"
+          />
           <Nav>
             <li>
-              <BotoesMenu onClick={goHome}>Home</BotoesMenu>
+              <BotoesMenu
+                onClick={goHome}
+                aria-label="Ir para a página inicial"
+              >
+                Home
+              </BotoesMenu>
             </li>
             <li>
-              <BotoesMenu onClick={goPlaylists}>Playlist</BotoesMenu>
+              <BotoesMenu
+                onClick={goPlaylists}
+                aria-label="Ir para a página de playlist"
+              >
+                Playlist
+              </BotoesMenu>
             </li>
             <li>
-              <BotoesMenu onClick={goMusics}>Minhas Músicas</BotoesMenu>
+              <BotoesMenu
+                onClick={goMusics}
+                aria-label="Ir para a página de músicas"
+              >
+                Minhas Músicas
+              </BotoesMenu>
             </li>
           </Nav>
         </Juncao>
-        <BotaoSair onClick={sair}>Logout</BotaoSair>
+        <BotaoSair onClick={sair} aria-label="Sair da conta">
+          Logout
+        </BotaoSair>
       </Menu>
     </div>
   );

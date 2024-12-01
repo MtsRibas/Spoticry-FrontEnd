@@ -25,7 +25,9 @@ export function AdicionarMusicaModal({
   return (
     <ModalWrapper aberto={aberto}>
       <ModalContent>
-        <BotaoFechar onClick={fechado}>X</BotaoFechar>
+        <BotaoFechar onClick={fechado} aria-label="Fechar modal">
+          X
+        </BotaoFechar>
         <TituloModal>
           <img src={detalheModal} alt="Icone músicas" />
           <h2>Adicionar Música</h2>
@@ -59,7 +61,9 @@ export function AdicionarMusicaModal({
               placeholder="URL da Música"
             />
           </Separacao>
-          <BotaoEnviar onClick={saveSong}>Salvar Música</BotaoEnviar>
+          <BotaoEnviar onClick={saveSong} aria-label="Salvar Musica">
+            Salvar Música
+          </BotaoEnviar>
         </Form>
       </ModalContent>
     </ModalWrapper>

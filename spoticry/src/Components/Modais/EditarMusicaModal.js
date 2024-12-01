@@ -21,10 +21,12 @@ export function EditarMusicaModal({
   return (
     <ModalWrapper aberto={aberto}>
       <ModalContent>
-        <BotaoFechar onClick={fechado}>X</BotaoFechar>
-        <TituloModal>
+        <BotaoFechar onClick={fechado} aria-label="Fechar modal">
+          X
+        </BotaoFechar>
+        <TituloModal aria-label="Fechar modal">
           <img src={detalheModal} alt="Icone músicas" />
-          <h2>Editar Música</h2>
+          <h2 aria-label="Titulo Modal">Editar Música</h2>
         </TituloModal>
         <Form onSubmit={(e) => e.preventDefault()}>
           <Separacao>
@@ -55,7 +57,9 @@ export function EditarMusicaModal({
               placeholder="Novo Artista"
             />
           </Separacao>
-          <BotaoEnviar onClick={updateSong}>Salvar Alterações</BotaoEnviar>
+          <BotaoEnviar onClick={updateSong} aria-label="Salvar alterações">
+            Salvar Alterações
+          </BotaoEnviar>
         </Form>
       </ModalContent>
     </ModalWrapper>
