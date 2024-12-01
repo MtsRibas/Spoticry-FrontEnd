@@ -23,7 +23,9 @@ export function Error() {
       </Logo>
       <ContainerErro>
         <img src={erroMensagem} alt="Error" />
-        <Botao onClick={onClickBotao}>Voltar para a home</Botao>
+        <Botao onClick={onClickBotao} aria-label="Voltar para home">
+          Voltar para a home
+        </Botao>
       </ContainerErro>
     </Tudo>
   );
