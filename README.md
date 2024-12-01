@@ -1,1 +1,0 @@
-# Spoticry-FrontEnd
