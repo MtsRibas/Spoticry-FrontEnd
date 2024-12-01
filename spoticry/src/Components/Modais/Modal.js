@@ -1,5 +1,5 @@
 import React from "react";
-import { Aberto, Conteudo, BotaoFechar } from "../Style/StyledModal";
+import { Aberto, Conteudo, BotaoFechar } from "../Style/SltyledModal";
 
 export function Modal({ aberto, fechado, conteudoModal }) {
   if (!aberto) return null;
