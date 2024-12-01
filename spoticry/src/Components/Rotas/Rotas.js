@@ -14,7 +14,7 @@ const Router = () => (
     <Route path="/login" element={<Login />} />
     <Route path="/playlists" element={<PlaylistUser />} />
     <Route path="/musics" element={<MusicUser />} />
-    <Route path="/playlist/:playlistId" component={DetalhePlaylist} />
+    <Route path="/playlist/:playlistId" element={<DetalhePlaylist />} />
     <Route path="/musica/:id" element={<DetalheMusica />} />
     <Route path="*" element={<Error />} />
   </Routes>
